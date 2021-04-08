@@ -26,11 +26,10 @@ try {
     $ingredienteBO->inserir($cozMin, $ingredienteBO->cadastrar("Linguiça", new DateTime("2021-04-25")));
 
     // Funcionários da cozinha Mineira.
-    ;
-    $funcionarioBO->contratar($cozMin, $funcionarioBO->cadastrar("José das Couves", "Chefe", 6));
-    $funcionarioBO->contratar($cozMin, $funcionarioBO->cadastrar("Felícia da Benevolência", "Cozinheira",2));
-    $funcionarioBO->contratar($cozMin, $funcionarioBO->cadastrar("Maria da Dores", "Garçonete",3));
-    $funcionarioBO->contratar($cozMin, $funcionarioBO->cadastrar("Celisvaldo dos Santos", "Metri",5));
+    $cozinhaBO->contratar($cozMin, $funcionarioBO->cadastrar("José das Couves", "Chefe", 6));
+    $cozinhaBO->contratar($cozMin, $funcionarioBO->cadastrar("Felícia da Benevolência", "Cozinheira",2));
+    $cozinhaBO->contratar($cozMin, $funcionarioBO->cadastrar("Maria da Dores", "Garçonete",3));
+    $cozinhaBO->contratar($cozMin, $funcionarioBO->cadastrar("Celisvaldo dos Santos", "Metri",5));
 
     $cozIt = $cozinhaBO->criar(
         "Italiana",
@@ -48,8 +47,8 @@ try {
     $ingredienteBO->inserir($cozMin, $ingredienteBO->cadastrar("Palmito", new DateTime("2022-06-25")));
 
     // Funcionários da cozinha Italiana.
-    $funcionarioBO->contratar($cozMin, $funcionarioBO->cadastrar("Maria Bastarda Dequem", "Cozinheira",2));
-    $funcionarioBO->contratar($cozMin, $funcionarioBO->cadastrar("Sextavado Obtusângulo Reto", "Atendente",2));
+    $cozinhaBO->contratar($cozMin, $funcionarioBO->cadastrar("Maria Bastarda Dequem", "Cozinheira",2));
+    $cozinhaBO->contratar($cozMin, $funcionarioBO->cadastrar("Sextavado Obtusângulo Reto", "Atendente",2));
 
     $cozChi = $cozinhaBO->criar(
         "Chinesa",
@@ -68,9 +67,9 @@ try {
     $ingredienteBO->inserir($cozMin, $ingredienteBO->cadastrar("Carne", new DateTime("2021-05-13")));
 
     // Funcionários da cozinha Chinesa.
-    $funcionarioBO->contratar($cozMin, $funcionarioBO->cadastrar("Carabino Tiro Certo", "Garçon",3));
-    $funcionarioBO->contratar($cozMin, $funcionarioBO->cadastrar("Ácido Acético Etílico da Silvas", "Cozinheiro",4));
-    $funcionarioBO->contratar($cozMin, $funcionarioBO->cadastrar("Manoel Sovaco de Gamba", "Caixa",3));
+    $cozinhaBO->contratar($cozMin, $funcionarioBO->cadastrar("Carabino Tiro Certo", "Garçon",3));
+    $cozinhaBO->contratar($cozMin, $funcionarioBO->cadastrar("Ácido Acético Etílico da Silvas", "Cozinheiro",4));
+    $cozinhaBO->contratar($cozMin, $funcionarioBO->cadastrar("Manoel Sovaco de Gamba", "Caixa",3));
 
     echo "<pre>";
     print_r($cozMin);

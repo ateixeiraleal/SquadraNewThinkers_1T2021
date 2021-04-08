@@ -24,20 +24,4 @@ class FuncionarioBO
             );
         }
     }
-
-    public function contratar($cozinha, $candidato): void
-    {
-        $this->validarExperiencia($candidato);
-        $cozinha->setFuncionarios($candidato);
-    }
-
-    public function validarExperiencia($candidato): void
-    {
-        if($candidato->getExperiencia() < 2){
-            throw new Exception(
-                "Candidato(a) " . strtoupper($candidato->getNome())
-                . " não possui tempo de experiência necessário para o cargo."
-            );
-        }
-    }
 }
