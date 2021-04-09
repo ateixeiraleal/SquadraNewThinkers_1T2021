@@ -42,13 +42,13 @@ try {
     );
 
     // Ingredientes da cozinha Italiana.
-    $ingredienteBO->inserir($cozMin, $ingredienteBO->cadastrar("Presunto", new DateTime("2021-06-17")));
-    $ingredienteBO->inserir($cozMin, $ingredienteBO->cadastrar("Mussarela", new DateTime("2021-04-09")));
-    $ingredienteBO->inserir($cozMin, $ingredienteBO->cadastrar("Palmito", new DateTime("2022-06-25")));
+    $ingredienteBO->inserir($cozIt, $ingredienteBO->cadastrar("Presunto", new DateTime("2021-06-17")));
+    $ingredienteBO->inserir($cozIt, $ingredienteBO->cadastrar("Mussarela", new DateTime("2021-04-09")));
+    $ingredienteBO->inserir($cozIt, $ingredienteBO->cadastrar("Palmito", new DateTime("2022-06-25")));
 
     // Funcionários da cozinha Italiana.
-    $cozinhaBO->contratar($cozMin, $funcionarioBO->cadastrar("Maria Bastarda Dequem", "Cozinheira",2));
-    $cozinhaBO->contratar($cozMin, $funcionarioBO->cadastrar("Sextavado Obtusângulo Reto", "Atendente",2));
+    $cozinhaBO->contratar($cozIt, $funcionarioBO->cadastrar("Maria Bastarda Dequem", "Cozinheira",2));
+    $cozinhaBO->contratar($cozIt, $funcionarioBO->cadastrar("Sextavado Obtusângulo Reto", "Atendente",2));
 
     $cozChi = $cozinhaBO->criar(
         "Chinesa",
@@ -61,15 +61,15 @@ try {
     );
 
     // Ingredientes da cozinha Chinesa.
-    $ingredienteBO->inserir($cozMin, $ingredienteBO->cadastrar("Champignon", new DateTime("2021-04-10")));
-    $ingredienteBO->inserir($cozMin, $ingredienteBO->cadastrar("Brócolis", new DateTime("2021-04-11")));
-    $ingredienteBO->inserir($cozMin, $ingredienteBO->cadastrar("Macarrão", new DateTime("2022-01-11")));
-    $ingredienteBO->inserir($cozMin, $ingredienteBO->cadastrar("Carne", new DateTime("2021-05-13")));
+    $ingredienteBO->inserir($cozChi, $ingredienteBO->cadastrar("Champignon", new DateTime("2021-04-10")));
+    $ingredienteBO->inserir($cozChi, $ingredienteBO->cadastrar("Brócolis", new DateTime("2021-04-11")));
+    $ingredienteBO->inserir($cozChi, $ingredienteBO->cadastrar("Macarrão", new DateTime("2022-01-11")));
+    $ingredienteBO->inserir($cozChi, $ingredienteBO->cadastrar("Carne", new DateTime("2021-05-13")));
 
     // Funcionários da cozinha Chinesa.
-    $cozinhaBO->contratar($cozMin, $funcionarioBO->cadastrar("Carabino Tiro Certo", "Garçon",3));
-    $cozinhaBO->contratar($cozMin, $funcionarioBO->cadastrar("Ácido Acético Etílico da Silvas", "Cozinheiro",4));
-    $cozinhaBO->contratar($cozMin, $funcionarioBO->cadastrar("Manoel Sovaco de Gamba", "Caixa",3));
+    $cozinhaBO->contratar($cozChi, $funcionarioBO->cadastrar("Carabino Tiro Certo", "Garçon",3));
+    $cozinhaBO->contratar($cozChi, $funcionarioBO->cadastrar("Ácido Acético Etílico da Silvas", "Cozinheiro",4));
+    $cozinhaBO->contratar($cozChi, $funcionarioBO->cadastrar("Manoel Sovaco de Gamba", "Caixa",3));
 
     echo "<pre>";
     print_r($cozMin);
