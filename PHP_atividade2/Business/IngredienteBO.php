@@ -32,7 +32,8 @@ class IngredienteBO
 
     public function validarDataVencimento($ingrediente): void
     {
-        if($ingrediente->getValidade() < new DateTime()){
+        $dataAtual = new DateTime();
+        if($ingrediente->getValidade()->format("Y-m-d") < $dataAtual->format("Y-m-d")){
             throw new Exception(
                 "Ingrediente " . strtoupper($ingrediente->getNome())
                 . " está vencido."
