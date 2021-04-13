@@ -17,4 +17,8 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get('/cozinhas', 'CozinhaController@obterTodas');
+$router->get('/cozinhas', 'CozinhaController@obterTodos');
+$router->post('/cozinhas', 'CozinhaController@criar');
+$router->put('/cozinhas/{id}', 'CozinhaController@atualizar');
+$router->get('/cozinhas/{id}', 'CozinhaController@obterPorId');
+$router->delete('/cozinhas/{id}', 'CozinhaController@excluir');
