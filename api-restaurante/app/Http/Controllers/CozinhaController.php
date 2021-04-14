@@ -3,39 +3,40 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cozinha;
+use App\Services\CozinhaService;
 use Illuminate\Http\Request;
 
 class CozinhaController extends Controller
 {
+    private $cozinhaService;
+
+    public function __construct(CozinhaService $cozinhaService)
+    {
+        $this->cozinhaService = $cozinhaService;
+    }
+
     public function obterTodos()
     {
-        $cozinhas = Cozinha::all();
-        return response()->json($cozinhas);
+        return $this->cozinhaService->obterTodos();
     }
 
     public function obterPorId($id)
     {
-        $cozinha = Cozinha::find($id);
-        return response()->json($cozinha);
+        return $this->cozinhaService->obterPorId($id);
     }
 
     public function criar(Request $request)
     {
-        Cozinha::create($request->all());
-        return response()->json("Cozinha cadastrada com sucesso!");
+        return $this->cozinhaService->criar($request);
     }
 
-    public function atualizar(Request $request, $id)
+    public function atualizar($id, Request $request)
     {
-        $cozinha = Cozinha::find($id);
-        $cozinha->update($request->all());
-        return response()->json($cozinha);
+        return $this->cozinhaService->atualizar($id, $request);
     }
 
     public function excluir($id)
     {
-        $cozinha = Cozinha::find($id);
-        $cozinha->delete();
-        return response()->json("Cozinha excluída com sucesso!");
+        return $this->cozinhaService->excluir($id);
     }
 }
